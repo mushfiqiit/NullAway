@@ -1,28 +1,56 @@
-Starting a Gradle Daemon (subsequent builds will be faster)
-> Task :buildSrc:extractPluginRequests
-> Task :buildSrc:generatePluginAdapters
-> Task :buildSrc:compileJava
+> Task :buildSrc:extractPluginRequests UP-TO-DATE
+> Task :buildSrc:generatePluginAdapters UP-TO-DATE
+> Task :buildSrc:compileJava UP-TO-DATE
 > Task :buildSrc:compileGroovy NO-SOURCE
-> Task :buildSrc:compileGroovyPlugins
-> Task :buildSrc:pluginDescriptors
-> Task :buildSrc:processResources
-> Task :buildSrc:classes
-> Task :buildSrc:jar
+> Task :buildSrc:compileGroovyPlugins UP-TO-DATE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :sample-library-model:processResources NO-SOURCE
+> Task :nullaway:processResources UP-TO-DATE
+> Task :installGitHooks UP-TO-DATE
+> Task :annotations:compileJava UP-TO-DATE
+> Task :nullaway:compileJava UP-TO-DATE
+> Task :nullaway:classes UP-TO-DATE
+> Task :nullaway:jar UP-TO-DATE
+> Task :sample-library-model:compileJava UP-TO-DATE
+> Task :sample-library-model:classes UP-TO-DATE
+> Task :sample-library-model:jar UP-TO-DATE
+
+> Task :sample:compileJava FAILED
+/Users/mushfiqurrahmanchowdhury/Documents/NullAway/CustomExperiment/Before/org/example/app/Greeter.java:12: warning: [StringCaseLocaleUsage] Specify a `Locale` when calling `String#to{Lower,Upper}Case`. (Note: there are multiple suggested fixes; the third may be most appropriate if you're dealing with ASCII Strings.)
+        return greeting.toUpperCase();
+                                   ^
+    (see https://errorprone.info/bugpattern/StringCaseLocaleUsage)
+  Did you mean 'return greeting.toUpperCase(Locale.ROOT);' or 'return greeting.toUpperCase(Locale.getDefault());' or 'return Ascii.toUpperCase(greeting);'?
+error: warnings found and -Werror specified
+1 error
+1 warning
+
+[Incubating] Problems report is available at: file:///Users/mushfiqurrahmanchowdhury/Documents/NullAway/build/reports/problems/problems-report.html
 
 FAILURE: Build failed with an exception.
 
-* Where:
-Build file '/Users/mushfiqurrahmanchowdhury/Documents/NullAway/build.gradle' line: 55
-
 * What went wrong:
-A problem occurred evaluating root project 'NullAway'.
-> NullAway only builds on JDK 21 or higher now. Detected 17.0.19. Please upgrade to JDK 21 or later.
+Execution failed for task ':sample:compileJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+> Compilation failed; see the compiler output below.
+  /Users/mushfiqurrahmanchowdhury/Documents/NullAway/CustomExperiment/Before/org/example/app/Greeter.java:12: warning: [StringCaseLocaleUsage] Specify a `Locale` when calling `String#to{Lower,Upper}Case`. (Note: there are multiple suggested fixes; the third may be most appropriate if you're dealing with ASCII Strings.)
+          return greeting.toUpperCase();
+                                     ^
+      (see https://errorprone.info/bugpattern/StringCaseLocaleUsage)
+    Did you mean 'return greeting.toUpperCase(Locale.ROOT);' or 'return greeting.toUpperCase(Locale.getDefault());' or 'return Ascii.toUpperCase(greeting);'?
+  1 error
+  1 warning
 
 * Try:
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
-> Get more help at https://help.gradle.org.
 
-BUILD FAILED in 51s
-7 actionable tasks: 7 executed
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.6.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 2s
+15 actionable tasks: 1 executed, 14 up-to-date
