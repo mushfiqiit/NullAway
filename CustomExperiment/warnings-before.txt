@@ -1,0 +1,28 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+> Task :buildSrc:extractPluginRequests
+> Task :buildSrc:generatePluginAdapters
+> Task :buildSrc:compileJava
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:compileGroovyPlugins
+> Task :buildSrc:pluginDescriptors
+> Task :buildSrc:processResources
+> Task :buildSrc:classes
+> Task :buildSrc:jar
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/Users/mushfiqurrahmanchowdhury/Documents/NullAway/build.gradle' line: 55
+
+* What went wrong:
+A problem occurred evaluating root project 'NullAway'.
+> NullAway only builds on JDK 21 or higher now. Detected 17.0.19. Please upgrade to JDK 21 or later.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 51s
+7 actionable tasks: 7 executed
