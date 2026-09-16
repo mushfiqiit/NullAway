@@ -20,12 +20,16 @@ plugins {
     id "java-library"
 }
 
-// Adds the CustomExperiment/Before sources so NullAway runs on them via
+// Adds a CustomExperiment variant's sources so NullAway runs on them via
 // `./gradlew :sample:compileJava`, alongside this module's existing sources.
+// Defaults to "Before"; pass -PcustomExperimentDir=After to switch to "After"
+// (Before and After can't both be on the source path: they declare the same
+// classes in the same package).
+def customExperimentDir = project.findProperty("customExperimentDir") ?: "Before"
 sourceSets {
     main {
         java {
-            srcDir "${rootDir}/CustomExperiment/Before"
+            srcDir "${rootDir}/CustomExperiment/${customExperimentDir}"
         }
     }
 }
