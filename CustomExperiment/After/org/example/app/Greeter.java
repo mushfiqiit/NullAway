@@ -1,5 +1,7 @@
 package org.example.app;
 
+import java.util.Locale;
+
 class Greeter {
 
     private static final String greeting;
@@ -9,6 +11,6 @@ class Greeter {
     }
 
     String greet() {
-        return greeting.toUpperCase();
+        return greeting.toUpperCase(Locale.ROOT);
     }
 }
